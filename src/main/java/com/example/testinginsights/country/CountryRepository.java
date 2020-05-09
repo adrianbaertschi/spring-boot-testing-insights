@@ -7,8 +7,8 @@ import java.util.Map;
 @Component
 public class CountryRepository {
 
-    private CountryRepository() {
-        // simulate dependency that cannot be created manually
+    CountryRepository() {
+        System.out.println("CountryRepository constructor called");
     }
 
     private final Map<String, String> countries = Map.of(
