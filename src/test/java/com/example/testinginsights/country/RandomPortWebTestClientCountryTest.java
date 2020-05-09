@@ -19,7 +19,7 @@ public class RandomPortWebTestClientCountryTest {
 
     @Test
     public void exampleTest() {
-        this.webTestClient.get().uri("http://localhost:" + port + "/countries")
+        this.webTestClient.get().uri("http://localhost:" + port + "/countries/SG")
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(String.class).value(containsString("Singapore"));

@@ -11,12 +11,12 @@ import static org.hamcrest.Matchers.containsString;
 @AutoConfigureWebTestClient
 public class WebTestClientCountryTest {
 
-    private WebTestClient webTestClient = WebTestClient
+    private final WebTestClient webTestClient = WebTestClient
             .bindToController(new CountryController(new CountryProvider())).build();
 
     @Test
     public void exampleTest() {
-        this.webTestClient.get().uri("/countries")
+        this.webTestClient.get().uri("/countries/SG")
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(String.class).value(containsString("Singapore"));

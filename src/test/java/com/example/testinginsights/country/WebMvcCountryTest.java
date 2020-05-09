@@ -1,14 +1,11 @@
 package com.example.testinginsights.country;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-
-import java.util.Collections;
 
 import static java.util.Collections.*;
 import static org.hamcrest.Matchers.containsString;
@@ -27,9 +24,9 @@ public class WebMvcCountryTest {
 
     @Test
     public void exampleTest() throws Exception {
-        Mockito.when(countryProvider.provideCountries()).thenReturn(singletonList("testdata"));
+        Mockito.when(countryProvider.findByIsoCode("DE")).thenReturn("testdata");
 
-        this.mvc.perform(get("/countries"))
+        this.mvc.perform(get("/countries/DE"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("testdata")));
     }

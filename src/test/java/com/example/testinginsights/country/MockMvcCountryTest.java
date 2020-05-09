@@ -20,7 +20,7 @@ public class MockMvcCountryTest {
 
     @Test
     public void exampleTest() throws Exception {
-        this.mvc.perform(get("/countries"))
+        this.mvc.perform(get("/countries/SG"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Singapore")));
     }
