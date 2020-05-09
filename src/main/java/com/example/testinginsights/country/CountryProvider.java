@@ -7,7 +7,6 @@ import java.util.Map;
 @Service
 public class CountryProvider {
 
-
     private final Map<String, String> countries = Map.of(
             "CH", "Switzerland",
             "SG", "Singapore");
