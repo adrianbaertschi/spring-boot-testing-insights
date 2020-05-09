@@ -9,10 +9,10 @@ import org.springframework.web.server.ResponseStatusException;
 @RestController
 public class CountryController {
 
-    private final CountryProvider countryProvider;
+    private final CountryService countryService;
 
-    public CountryController(CountryProvider countryProvider) {
-        this.countryProvider = countryProvider;
+    public CountryController(CountryService countryService) {
+        this.countryService = countryService;
     }
 
     @GetMapping("/countries/{isoCode}")
@@ -20,6 +20,6 @@ public class CountryController {
         if (isoCode == null || isoCode.length() != 2) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "isocode must me 2 digits");
         }
-        return countryProvider.findByIsoCode(isoCode);
+        return countryService.findByIsoCode(isoCode);
     }
 }

@@ -1,11 +1,15 @@
 package com.example.testinginsights.country;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Service
-public class CountryProvider {
+@Component
+public class CountryRepository {
+
+    private CountryRepository() {
+        // simulate dependency that cannot be created manually
+    }
 
     private final Map<String, String> countries = Map.of(
             "CH", "Switzerland",
