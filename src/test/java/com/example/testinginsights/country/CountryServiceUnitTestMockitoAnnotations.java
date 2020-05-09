@@ -12,7 +12,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class CountryServiceTestAnnotations {
+class CountryServiceUnitTestMockitoAnnotations {
 
     @Mock
     private CountryRepository countryRepository;
