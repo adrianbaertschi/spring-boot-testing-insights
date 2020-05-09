@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.containsString;
 public class WebTestClientCountryTest {
 
     private WebTestClient webTestClient = WebTestClient
-            .bindToController(new CountryController()).build();
+            .bindToController(new CountryController(new CountryProvider())).build();
 
     @Test
     public void exampleTest() {
