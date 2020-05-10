@@ -24,8 +24,8 @@ dependencies {
 
 
     // Both used for junit-insights
-    testCompile 'de.adesso:junit-insights:1.1.0'
-    testCompile 'org.junit.platform:junit-platform-runner:1.7.0-M1'
+    testImplementation 'de.adesso:junit-insights:1.1.0'
+    testImplementation 'org.junit.platform:junit-platform-runner:1.7.0-M1'
 }
 
 test {
