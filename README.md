@@ -3,10 +3,32 @@ Demo project to learn various aspects of Spring Boot Testing
 
 
 # Test flavours
-- Bare bones Unit Test
-- WebMvcTest
-- Integration test without server
-- Integration test with server
+## Bare bones Unit Test
+No Spring involved. Mocking with Mockito possible explicit or with annotations.
+
+* [Example simple](src/test/java/com/example/testinginsights/country/CountryServiceUnitTest.java)
+* [Example Mockito annotations](src/test/java/com/example/testinginsights/country/CountryServiceUnitTestMockitoAnnotations.java)
+
+## WebMvcTest
+Only WebMvc components are active.
+Specify controllers 
+No @Component, @Service or @Repository beans can be used, these must be mocked.
+
+* [Example](src/test/java/com/example/testinginsights/country/CountryControllerWebMvcTest.java)
+* [Reference doc](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/web/servlet/WebMvcTest.html)
+
+## Integration Test without server
+All beans available. MockMvc used to make calls.
+
+* [Example](src/test/java/com/example/testinginsights/country/CountryIntegrationTest.java)
+
+## Integration Test with server
+All beans available. Make real calls using TestRestTemplate or similar.
+
+* [Example](src/test/java/com/example/testinginsights/country/CountryIntegrationTestRestTemplate.java)
+
+## Mocking external calls
+HTTP: Configure url for test, use third party mock server library like [WireMock](http://wiremock.org/) or [MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver)
 
 # Resources
 

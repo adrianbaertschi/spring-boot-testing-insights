@@ -14,8 +14,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+// Limit controllers to use (could be omitted here since we only have one)
 @WebMvcTest(controllers = CountryController.class)
-public class CountryControllerTest {
+public class CountryControllerWebMvcTest {
 
     @Autowired
     private MockMvc mockMvc;
